@@ -1552,7 +1552,7 @@ p {
 }
 
 .is-hidden {
-	display: none!important
+	display: none !important;
 }
 
 .p-relative {
@@ -2022,7 +2022,7 @@ p {
 	background: var(--background-btn-sent) url("../images/dark-hide.svg") center left 8px no-repeat
 }
 
-.switch-theme input:checked+.slider:before {
+.switch-theme input:checked .slider:before {
 	background: #fff url("../images/light-active.svg") center center no-repeat;
 	-webkit-transform: translateX(30px);
 	-ms-transform: translateX(30px);
