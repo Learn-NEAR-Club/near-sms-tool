@@ -110,7 +110,7 @@
         </div>
       </div>
       <div class="f-12 f-500 mb-30 mb-sm-0">
-        <div><b>Statics:</b></div>
+        <div><b>Statistics:</b></div>
         <div style="padding-left: 10px">
           <div>{{ statics.activeAccount }} active accounts,</div>
           <div>{{ statics.totalsAccount }} total accounts,</div>

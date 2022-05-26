@@ -123,16 +123,19 @@
         </div>
       </div>
     </transition>
+
     <ConfirmModal
       :showModal="showModalConfirmReGenImport"
       @closeConfirmModal="closeConfirmModal($event)"
       :handleConfirmFn="handleConfirm"
+      :isShowKeyModal="true"
     >
       <div :style="{ fontSize: '15px' }">
         Are you sure to override the old key? <br />
         Override new key will make existed privated messages unable to decrypt
       </div>
     </ConfirmModal>
+
     <ConfirmPasswordModal
       :showModalConfirm="showModalPassword"
       @toggleConfirmPasswordModal="toggleConfirmPasswordModal($event)"
@@ -157,6 +160,7 @@ export default {
     ConfirmModal,
     ConfirmPasswordModal,
   },
+
   data() {
     return {
       publicKey: null,
@@ -177,6 +181,7 @@ export default {
     username() {
       return window.walletConnection.getAccountId();
     },
+
     hiddenPubKey() {
       if (this.publicKey && !this.hiddenExport) {
         return (
@@ -187,6 +192,7 @@ export default {
       }
       return "";
     },
+
     hiddenPriKey() {
       if (this.privateKey && !this.hiddenExport) {
         return (
@@ -219,6 +225,7 @@ export default {
         `${process.env.VUE_APP_CONTRACT_NAME}_${this.username}_privatekey`
       );
     }
+
     if (
       localStorage.getItem(
         `${process.env.VUE_APP_CONTRACT_NAME}_${this.username}_publickey`

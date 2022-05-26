@@ -7,9 +7,7 @@
       <Avatar :accountId="message.to" size="40" />
 
       <div class="content pl-20 pl-md-10 flex-grow-1">
-        <header
-          class="d-flex justify-between mb-10 mb-sm-0 mail-content__item-header"
-        >
+        <header class="d-flex justify-between mail-content__item-header">
           <div class="flex-grow-1 mail-content__item-header__top pr-20">
             <div class="name title-16 f-700">To: {{ message.to }}</div>
             <div :class="{ isPrivate: message.isPrivate }">
@@ -57,6 +55,7 @@
       :showModal="showModalConfirmReceive"
       @closeConfirmModal="closeConfirmModal($event)"
       :handleConfirmFn="handleConfirm"
+      :isShowKeyModal="false"
     >
       <div :style="{ fontSize: '15px' }">Are you sure to claim back?</div>
     </ConfirmModal>
@@ -136,6 +135,7 @@ export default {
     closeConfirmModal(e) {
       this.showModalConfirmReceive = e;
     },
+
     handleCheckTime(hourSentMsg) {
       if (hourSentMsg && this.realTime) {
         const timeConvert = dayjs(this.realTime).diff(

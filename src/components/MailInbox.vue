@@ -6,9 +6,7 @@
   >
     <Avatar :accountId="message.from" size="40" />
     <div class="content pl-20 pl-md-10 flex-grow-1">
-      <header
-        class="d-flex justify-between mb-10 mb-sm-0 mail-content__item-header"
-      >
+      <header class="d-flex justify-between mail-content__item-header">
         <div class="flex-grow-1 mail-content__item-header__top pr-20">
           <div class="name title-16 f-700">{{ message.from }}</div>
           <div :class="{ isPrivate: message.isPrivate }">

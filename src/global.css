@@ -2412,13 +2412,13 @@ p {
 
 @media (max-width: 1024px) {
   .mail-content__item {
-    padding: 0 0 16px;
+    padding: 12px 0 12px 0;
   }
 }
 
 @media (max-width: 767px) {
   .mail-content__item {
-    padding: 0 0 8px;
+    padding: 6px 0 6px 0;
   }
 }
 
@@ -2517,7 +2517,7 @@ p {
 }
 
 .mail-right__header {
-  padding: 20px 40px 30px;
+  padding: 20px 30px 30px;
 }
 
 @media (max-width: 767px) {
@@ -2533,7 +2533,7 @@ p {
 }
 
 .mail-right__no-selected {
-  padding: 120px 40px 30px;
+  padding: 120px 30px 30px;
 }
 
 .mail-right__selected {
@@ -2541,7 +2541,7 @@ p {
   max-height: -moz-calc(100vh - 100px);
   max-height: calc(100vh - 100px);
   overflow-y: overlay;
-  padding: 0 40px;
+  padding: 0 30px;
 }
 
 @media (max-width: 1024px) { 
@@ -2655,6 +2655,24 @@ p {
   fill: var(--color-action-hover);
 }
 
+@media (max-width: 1550px) {
+  .mail-right__item-header .name {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    width: 200px;
+  }
+}
+
+@media (max-width: 1024px) {
+  .mail-right__item-header .name {
+    white-space: normal;
+    overflow: visible;
+    width: 100%;
+  }
+  
+}
+
 @media (max-width: 767px) {
   .mail-right__item-header .name {
     font-size: 12px;
@@ -2675,7 +2693,7 @@ p {
   line-height: 30px;
   font-weight: 700;
   color: var(--color-menu);
-  cursor: pointer;
+  cursor: text;
 }
 
 @media (max-width: 1024px) {
@@ -2770,7 +2788,7 @@ p {
 }
 
 .mail-right__sent:before {
-  content: " ";
+  content: "";
   position: absolute;
   top: -30px;
   left: 0;
@@ -2835,13 +2853,15 @@ p {
   z-index: 99;
 }
 
+.ProseMirror {
+  min-height: 100px;
+  width: 100%;
+  overflow-y: scroll;
+}
+
 .ProseMirror:focus {
   outline: none;
 }
-
-/* .ProseMirror {
-  border: 1px solid green;
-} */
 
 .ProseMirror code {
   font-size: 0.9rem;
@@ -2872,16 +2892,27 @@ p {
   font-size: 0.8rem;
 }
 
+@media (max-width: 1400px) {
+  .mail-right__sent {
+    padding: 20px 10px;
+  }
+}
+
 @media (max-width: 1024px) {
   .modal-sent {
     right: 0px;
   } 
+  
   .mail-right__sent {
     padding: 20px;
   }
+  
+  .ProseMirror {
+    padding: 0 1rem;
+  }
 }
 
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .modal-sent {
     padding: 35px 15px 15px;
     max-width: 100%;
@@ -2895,7 +2926,7 @@ p {
     background: var(--background-body);
   }
   .mail-right__sent {
-    padding: 10px;
+    padding: 20px 10px;
   }
 }
 
@@ -2922,6 +2953,7 @@ p {
   display: block;
   left: auto;
   top: auto;
+  bottom: 0;
   right: 125px;
   -webkit-transform: translate(0, 0);
   -moz-transform: translate(0, 0);

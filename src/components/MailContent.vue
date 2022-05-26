@@ -23,10 +23,15 @@
           </div>
         </div>
         <div
-          class="d-flex align-center justify-between mail-content__header-col mail-content__header-col-right"
+          class="
+            d-flex
+            align-center
+            justify-between
+            mail-content__header-col mail-content__header-col-right
+          "
         >
           <div class="d-flex align-center no-wrap text-right top">
-            <div>Page {{ page }}</div>
+            <div>Page {{ page }}/ {{ maxPage }}</div>
             <div
               class="mail-content__button hidden-sm ml-20 mr-20 ml-sm-6 mr-sm-0"
             >
@@ -113,6 +118,9 @@ export default {
     },
     reachMaxPage() {
       return this.page * ITEM_PER_PAGE > this.totalMsg;
+    },
+    maxPage() {
+      return Math.ceil(this.totalMsg / ITEM_PER_PAGE);
     },
     preventPagination() {
       return this.$store.state.preventPagination;

@@ -74,14 +74,21 @@ export default {
     handleConfirmFn: {
       type: Function,
     },
+    isShowKeyModal: {
+      type: Boolean,
+    },
   },
+
   methods: {
     handleCloseModal() {
       this.$emit("closeConfirmModal", false);
     },
+
     handleConfirm() {
       this.$emit("closeConfirmModal", false);
-      this.$store.commit("TOGGLE_KEY_MODAL");
+      if (this.isShowKeyModal) {
+        this.$store.commit("TOGGLE_KEY_MODAL");
+      }
       this.handleConfirmFn();
     },
   },

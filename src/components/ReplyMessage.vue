@@ -137,7 +137,7 @@ export default {
     Avatar,
     TipTap,
   },
-  props: ["id", "title", "to", "from", "showReply"],
+  props: ["id", "title", "to", "from", "showReply", "isPrivate"],
   data() {
     return {
       data: "",
@@ -160,6 +160,14 @@ export default {
   },
 
   watch: {
+    isPrivate: {
+      immediate: true,
+      handler: function () {
+        if (this.isPrivate) {
+          this.type = "PRIVATE";
+        }
+      },
+    },
     type: {
       immediate: true,
       handler: function () {
