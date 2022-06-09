@@ -121,6 +121,7 @@
           :from="dataMsg.from"
           :content="dataMsg.content"
           :showForward="showForward"
+          :isPrivate="dataMsg.isPrivate"
           @cancelForward="cancelForward"
         />
       </div>
